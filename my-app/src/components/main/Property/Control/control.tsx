@@ -13,8 +13,8 @@ const Control = () => {
       </div>
       <div style={{ paddingBottom: 30 }}> [A] :: Требуется доступ администратора </div>
       <div style={{ paddingBottom: 30 }}>
-        <RouterLink to={`map`}>&gt; Душевые</RouterLink>
-        <RouterLink to={`map`}>&gt; Лаборатория Гидропоники</RouterLink>
+        <RouterLink to={`showers`}>&gt; Душевые</RouterLink>
+        <RouterLink to={`lab`}>&gt; Лаборатория Гидропоники</RouterLink>
         <RouterLink to={`map`}>&gt; Шлюзы [A]</RouterLink>
         <RouterLink to={`map`}>&gt; Система [A]</RouterLink>
       </div>
