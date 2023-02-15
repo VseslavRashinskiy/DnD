@@ -13,8 +13,8 @@ const Main = () => {
         <RouterLink to={`diagnosis`}>&gt; Диагностика</RouterLink>
         <RouterLink to={`schedule`}>&gt; График</RouterLink>
         <RouterLink to={`composition`}>&gt; Состав</RouterLink>
-        <RouterLink to={`main`}>&gt; Связь</RouterLink>
-        <RouterLink to={`main`}>&gt; Управление</RouterLink>
+        <RouterLink to={`connection`}>&gt; Связь</RouterLink>
+        <RouterLink to={`control`}>&gt; Управление</RouterLink>
       </div>
     </div>
   );

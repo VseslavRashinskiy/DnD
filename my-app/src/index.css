@@ -30,6 +30,7 @@ a{
   user-select: none;
   height: 100%;
   margin: 0;
+  text-decoration: none;
 }
 
 a:active {
