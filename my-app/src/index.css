@@ -1,0 +1,75 @@
+html, body {
+  font-family: "Vga",Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size: 30px;
+  line-height: 38px;
+  color: rgb(212, 249, 250);
+  user-select: none;
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  margin: 0;
+  background-attachment: fixed;
+  height: 100%;
+  background: #000c0c;
+  background-image: radial-gradient(rgba(212,249,250,.15),#000c0c 100%);
+}
+
+.welcome__main {
+  padding: 38px;
+}
+
+a{
+  cursor: pointer;
+  display: block;
+  font-family: "Vga",Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size: 30px;
+  line-height: 38px;
+  color: rgb(212, 249, 250);
+  user-select: none;
+  height: 100%;
+  margin: 0;
+}
+
+a:active {
+  color: rgb(0, 12, 12);
+  background: rgb(212, 249, 250);
+  transition:  background 50ms, foreground 150ms;
+}
+
+a:hover {
+  opacity: 1;
+  background: rgb(212, 249, 250);
+  color: rgb(0, 12, 12);
+  transition: background 50ms, foreground 150ms;
+}
+
+button{
+  cursor: pointer;
+  display: block;
+  text-align: left;
+  padding: 0;
+  width: 100%;
+  border: none;
+  font-family: "Vga",Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-size: 30px;
+  line-height: 38px;
+  color: rgb(212, 249, 250);
+  background-color: rgba(28,28,28,0);
+  user-select: none;
+  height: 100%;
+}
+
+button:active {
+  color: rgb(0, 12, 12);
+  background: rgb(212, 249, 250);
+  transition:  background 50ms, foreground 150ms;
+}
+
+button:hover {
+  opacity: 1;
+  background: rgb(212, 249, 250);
+  color: rgb(0, 12, 12);
+  transition: background 50ms, foreground 150ms;
+}
