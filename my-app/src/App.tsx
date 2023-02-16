@@ -7,6 +7,10 @@ import Control from 'components/main/Property/Control/control';
 import Gateways from 'components/main/Property/Control/SinglePages/gateways';
 import HydroponicsLab from 'components/main/Property/Control/SinglePages/hydroponicsLab';
 import Showers from 'components/main/Property/Control/SinglePages/showers';
+import Activation from 'components/main/Property/Control/System/Options/activation';
+import LifeSupport from 'components/main/Property/Control/System/Options/lifeSupport';
+import SelfDestruct from 'components/main/Property/Control/System/Options/selfDestruct';
+import System from 'components/main/Property/Control/System/system';
 import Diagnosis from 'components/main/Property/diagnosis';
 import Map from 'components/main/Property/map';
 import Schedule from 'components/main/Property/schedule';
@@ -32,6 +36,10 @@ function App() {
           <Route path="main/control/showers" element={<Showers />} />
           <Route path="main/control/lab" element={<HydroponicsLab />} />
           <Route path="main/control/gateways" element={<Gateways />} />
+          <Route path="main/control/system" element={<System />} />
+          <Route path="main/control/system/life" element={<LifeSupport />} />
+          <Route path="main/control/system/self-destruct" element={<SelfDestruct />} />
+          <Route path="main/control/system/self-destruct/activation" element={<Activation />} />
         </Routes>
       </div>
     </>

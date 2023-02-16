@@ -1,26 +1,36 @@
 import React, { useState, useEffect } from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+
+const style = {
+  position: 'absolute' as const,
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  color: '#000',
+  background: '#d4f9fa',
+  p: '19px',
+};
 
 const Control = () => {
-  const happyPress: boolean = useKeyPress(']');
+  const PressEng: boolean = useKeyPress(']');
+  const PressRu: boolean = useKeyPress('ъ');
   const [pointer, setPointer] = useState('link');
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
-  const checkPress = () => {
-    if (!happyPress) {
-      return alert('Fuck U');
-    }
-  };
+  const checkPress = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   useEffect(() => {
-    if (happyPress) {
+    if (PressEng || PressRu) {
       setPointer('link-active');
     } else {
       setPointer('link');
     }
-  }, [happyPress]);
+  }, [PressEng, PressRu]);
 
-  console.log(happyPress);
   return (
     <div>
       <div style={{ paddingBottom: 30 }}>
@@ -37,11 +47,20 @@ const Control = () => {
           </RouterLink>
         </button>
         <button onClick={checkPress}>
-          {' '}
-          <RouterLink className={pointer} to={`map`}>
+          <RouterLink className={pointer} to={`system`}>
             &gt; Система [A]
           </RouterLink>
         </button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <p>Ошибка! Требуется авторизация.</p>
+          </Box>
+        </Modal>
       </div>
       <div style={{ paddingBottom: 30 }}>==========</div>
       <button onClick={goBack}>&gt; Назад</button>
@@ -73,7 +92,7 @@ function useKeyPress(targetKey: string): boolean {
       window.removeEventListener('keydown', downHandler);
       window.removeEventListener('keyup', upHandler);
     };
-  }, []); // Empty array ensures that effect is only run on mount and unmount
+  }, []);
   return keyPressed;
 }
 

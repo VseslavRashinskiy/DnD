@@ -82,10 +82,13 @@ button:hover {
   transition: background 50ms, foreground 150ms;
 }
 
-.link{
+.link {
   pointer-events: none;
 }
-
-.link-active{
+.link-active {
   pointer-events: auto;
+}
+
+p {
+  margin: 0;
 }
