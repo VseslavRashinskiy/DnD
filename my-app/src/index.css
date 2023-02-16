@@ -1,5 +1,12 @@
+@font-face {
+  font-family: "Karma Suture";
+  src: url("./components/assets/fonts/3079-font.ttf") format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html, body {
-  font-family: "Vga",Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-family: 'Karma Suture', arial;
   font-size: 30px;
   line-height: 38px;
   color: rgb(212, 249, 250);
@@ -23,7 +30,7 @@ body {
 a{
   cursor: pointer;
   display: block;
-  font-family: "Vga",Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-family: 'Karma Suture', arial;
   font-size: 30px;
   line-height: 38px;
   color: rgb(212, 249, 250);
@@ -53,7 +60,7 @@ button{
   padding: 0;
   width: 100%;
   border: none;
-  font-family: "Vga",Menlo,Monaco,Consolas,"Courier New",monospace;
+  font-family: 'Karma Suture', arial;
   font-size: 30px;
   line-height: 38px;
   color: rgb(212, 249, 250);
@@ -73,4 +80,12 @@ button:hover {
   background: rgb(212, 249, 250);
   color: rgb(0, 12, 12);
   transition: background 50ms, foreground 150ms;
+}
+
+.link{
+  pointer-events: none;
+}
+
+.link-active{
+  pointer-events: auto;
 }
