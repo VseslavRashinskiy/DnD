@@ -92,3 +92,31 @@ button:hover {
 p {
   margin: 0;
 }
+
+.input {
+  text-transform: uppercase;
+}
+
+.__prompt__.alert.cursor:after {
+  background-color: #ff3c00;
+  color: #ff3c00;
+}
+
+.__prompt__.cursor:after {
+  content: "|";
+  background-color: #ff3c00;
+  color: #ff3c00;
+  -webkit-animation: blink 1s steps(5,start) infinite;
+  animation: blink 1s steps(5,start) infinite;
+}
+
+@keyframes blink {
+  to {
+    visibility: hidden;
+  }
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
+  }
+}

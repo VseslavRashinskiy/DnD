@@ -1,13 +1,29 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Modal from '@mui/material/Modal';
+import Box from '@mui/material/Box';
+
+const style = {
+  position: 'absolute' as const,
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  color: '#000',
+  background: '#d4f9fa',
+  p: '19px',
+};
 
 const Gateways = () => {
   const [turn, setTurn] = useState('Закрыт');
+  const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
   const turnSwitch = () => {
     turn === 'Закрыт' ? setTurn('Открыт') : setTurn('Закрыт');
   };
+
+  const handleOpen = () => setOpen(true);
+  const handleClose = () => setOpen(false);
 
   return (
     <div>
@@ -16,7 +32,18 @@ const Gateways = () => {
         <div>=====</div>
       </div>
       <div style={{ paddingBottom: 30 }}>
-        <button>&gt; Стыковочный Отсек_01 :: ШЛЮЗ Закрыт.</button>
+        <button onClick={handleOpen}>&gt; Стыковочный Отсек_01 :: ШЛЮЗ Закрыт.</button>
+        <Modal
+          open={open}
+          onClose={handleClose}
+          aria-labelledby="modal-modal-title"
+          aria-describedby="modal-modal-description"
+        >
+          <Box sx={style}>
+            <p>ОШИБКА! Действует отмена блокировки.</p>
+            <p>Невозможно разблокировать дистанционно. Требуется ручное вмешательство.</p>
+          </Box>
+        </Modal>
         <button onClick={turnSwitch}>&gt; Стыковочный Отсек_02 :: ШЛЮЗ {turn}.</button>
       </div>
       <div style={{ paddingBottom: 30 }}>===========</div>

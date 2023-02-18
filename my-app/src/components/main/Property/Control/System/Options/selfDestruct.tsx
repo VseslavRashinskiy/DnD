@@ -1,13 +1,9 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
 const SelfDestruct = () => {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
-  const [turn, setTurn] = useState('Выкл');
-  const turnSwitch = () => {
-    turn === 'Выкл' ? setTurn('Вкл') : setTurn('Выкл');
-  };
 
   return (
     <div>
