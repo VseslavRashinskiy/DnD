@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link as RouterLink, useNavigate } from 'react-router-dom';
 
-const Connection = () => {
+const Connection = ({ nameShip }: { nameShip: string }) => {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
 
@@ -13,7 +13,7 @@ const Connection = () => {
       </div>
       <div style={{ paddingBottom: 30 }}>2 корабля в зоне досягаемости </div>
       <div style={{ paddingBottom: 30 }}>
-        <RouterLink to={`yourship`}>&gt; Контакт с ВАШКОРАБЛЬ</RouterLink>
+        <RouterLink to={`yourship`}>&gt; Контакт с {nameShip}</RouterLink>
         <RouterLink to={`hercules`}>&gt; Контакт с Геркулес</RouterLink>
       </div>
       <div style={{ paddingBottom: 30 }}>==========</div>

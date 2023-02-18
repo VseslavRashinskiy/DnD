@@ -19,30 +19,29 @@ import React from 'react';
 import { Route, Routes } from 'react-router-dom';
 
 function App() {
+  const nameShip = 'Попап';
   return (
-    <>
-      <div className="welcome__main">
-        <Routes>
-          <Route path="/" element={<WelcomePage />} />
-          <Route path="main" element={<Main />} />
-          <Route path="main/map" element={<Map />} />
-          <Route path="main/diagnosis" element={<Diagnosis />} />
-          <Route path="main/schedule" element={<Schedule />} />
-          <Route path="main/composition" element={<Composition />} />
-          <Route path="main/connection" element={<Connection />} />
-          <Route path="main/connection/yourship" element={<YourShip />} />
-          <Route path="main/connection/hercules" element={<Hercules />} />
-          <Route path="main/control" element={<Control />} />
-          <Route path="main/control/showers" element={<Showers />} />
-          <Route path="main/control/lab" element={<HydroponicsLab />} />
-          <Route path="main/control/gateways" element={<Gateways />} />
-          <Route path="main/control/system" element={<System />} />
-          <Route path="main/control/system/life" element={<LifeSupport />} />
-          <Route path="main/control/system/self-destruct" element={<SelfDestruct />} />
-          <Route path="main/control/system/self-destruct/activation" element={<Activation />} />
-        </Routes>
-      </div>
-    </>
+    <div className="welcome__main">
+      <Routes>
+        <Route path="/" element={<WelcomePage />} />
+        <Route path="main" element={<Main />} />
+        <Route path="main/map" element={<Map />} />
+        <Route path="main/diagnosis" element={<Diagnosis />} />
+        <Route path="main/schedule" element={<Schedule nameShip={nameShip} />} />
+        <Route path="main/composition" element={<Composition />} />
+        <Route path="main/connection" element={<Connection nameShip={nameShip} />} />
+        <Route path="main/connection/yourship" element={<YourShip />} />
+        <Route path="main/connection/hercules" element={<Hercules />} />
+        <Route path="main/control" element={<Control />} />
+        <Route path="main/control/showers" element={<Showers />} />
+        <Route path="main/control/lab" element={<HydroponicsLab />} />
+        <Route path="main/control/gateways" element={<Gateways />} />
+        <Route path="main/control/system" element={<System />} />
+        <Route path="main/control/system/life" element={<LifeSupport />} />
+        <Route path="main/control/system/self-destruct" element={<SelfDestruct />} />
+        <Route path="main/control/system/self-destruct/activation" element={<Activation />} />
+      </Routes>
+    </div>
   );
 }
 
