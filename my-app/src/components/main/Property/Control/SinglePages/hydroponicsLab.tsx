@@ -2,11 +2,17 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 const HydroponicsLab = () => {
-  const [turn, setTurn] = useState('Выкл');
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
+  const [turn, setTurn] = useState(localStorage.getItem('Sprayers') || 'Выкл');
   const turnSwitch = () => {
-    turn === 'Выкл' ? setTurn('Вкл') : setTurn('Выкл');
+    if (turn === 'Выкл') {
+      localStorage.setItem('Sprayers', 'Вкл');
+      setTurn('Вкл');
+    } else {
+      setTurn('Выкл');
+      localStorage.setItem('Sprayers', 'Выкл');
+    }
   };
 
   return (

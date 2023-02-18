@@ -58,7 +58,7 @@ const Control = () => {
           aria-describedby="modal-modal-description"
         >
           <Box sx={style}>
-            <p>Ошибка! Требуется авторизация.</p>
+            <p>Ошибка! Требуется доступ администратора.</p>
           </Box>
         </Modal>
       </div>

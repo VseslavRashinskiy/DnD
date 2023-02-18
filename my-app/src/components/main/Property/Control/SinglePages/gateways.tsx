@@ -14,12 +14,18 @@ const style = {
 };
 
 const Gateways = () => {
-  const [turn, setTurn] = useState('Закрыт');
   const [open, setOpen] = useState(false);
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
+  const [turn, setTurn] = useState(localStorage.getItem('Gateway') || 'Закрыт');
   const turnSwitch = () => {
-    turn === 'Закрыт' ? setTurn('Открыт') : setTurn('Закрыт');
+    if (turn === 'Закрыт') {
+      localStorage.setItem('Gateway', 'Открыт');
+      setTurn('Открыт');
+    } else {
+      setTurn('Закрыт');
+      localStorage.setItem('Gateway', 'Закрыт');
+    }
   };
 
   const handleOpen = () => setOpen(true);

@@ -4,9 +4,15 @@ import { useNavigate } from 'react-router-dom';
 const LifeSupport = () => {
   const navigate = useNavigate();
   const goBack = () => navigate(-1);
-  const [turn, setTurn] = useState('Выкл');
+  const [turn, setTurn] = useState(localStorage.getItem('LSS') || 'Выкл');
   const turnSwitch = () => {
-    turn === 'Выкл' ? setTurn('Вкл') : setTurn('Выкл');
+    if (turn === 'Выкл') {
+      localStorage.setItem('LSS', 'Вкл');
+      setTurn('Вкл');
+    } else {
+      setTurn('Выкл');
+      localStorage.setItem('LSS', 'Выкл');
+    }
   };
 
   return (
